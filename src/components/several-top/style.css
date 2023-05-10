@@ -1,0 +1,20 @@
+.several-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.position-number {
+  margin: unset;
+  color: var(--feature);
+  font-weight: 600;
+}
+
+.name {
+  margin: unset;
+}
+
+.artist-name {
+  margin-left: 4px; 
+  opacity: 0.5;
+}

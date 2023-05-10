@@ -1,0 +1,6 @@
+.top-artists {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-block: 28px;
+}

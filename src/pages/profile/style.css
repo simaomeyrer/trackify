@@ -1,0 +1,24 @@
+.profile-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 30px;
+}
+
+.profile-img img{
+  max-width: 155px;
+  border-radius: 100px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 28px;
+}
