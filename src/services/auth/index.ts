@@ -1,6 +1,8 @@
 import { generateCodeChallenge, generateCodeVerifier } from "./partials"
 
 const clientId = import.meta.env.VITE_CLIENT_ID
+console.log("clientId:", clientId)
+console.log("clientIdNew:", import.meta.env.VITE_CLIENT_ID_NEW)
 
 export async function redirectToAuthCodeFlow() {
   const verifier = generateCodeVerifier(128)
