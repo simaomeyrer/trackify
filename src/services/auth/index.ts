@@ -1,8 +1,7 @@
 import { generateCodeChallenge, generateCodeVerifier } from "./partials"
 
 const clientId = import.meta.env.VITE_CLIENT_ID
-console.log("clientId:", clientId)
-console.log("clientIdNew:", import.meta.env.VITE_CLIENT_ID_NEW)
+const redirectURI = import.meta.env.VITE_REDIRECT_URI
 
 export async function redirectToAuthCodeFlow() {
   const verifier = generateCodeVerifier(128)
@@ -13,7 +12,7 @@ export async function redirectToAuthCodeFlow() {
 
   params.append("client_id", clientId)
   params.append("response_type", "code")
-  params.append("redirect_uri", `${import.meta.env.VITE_REDIRECT_URI}`)
+  params.append("redirect_uri", `${redirectURI}`)
   params.append("scope", "user-read-private user-read-email user-top-read")
   params.append("code_challenge_method", "S256")
   params.append("code_challenge", challenge)
@@ -28,7 +27,7 @@ async function getAccessToken(code: string): Promise<string> {
   params.append("client_id", clientId)
   params.append("grant_type", "authorization_code")
   params.append("code", code)
-  params.append("redirect_uri", `${import.meta.env.VITE_REDIRECT_URI}`)
+  params.append("redirect_uri", `${redirectURI}`)
   params.append("code_verifier", verifier!)
 
   const result = await fetch("https://accounts.spotify.com/api/token", {
