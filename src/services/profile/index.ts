@@ -1,4 +1,4 @@
-import { UserProfile } from "./types"
+import { TopSeveral, UserProfile } from "./types"
 
 type TimeRange = "short_term" | "medium_term" | "long_term"
 type Context = "artists" | "tracks"
@@ -19,7 +19,11 @@ export async function fetchProfile(token: string): Promise<UserProfile> {
   return await result.json()
 }
 
-export async function fetchTop(type: Context, token: string, filter: TopTracksFilter) {
+export async function fetchTop(
+  type: Context,
+  token: string,
+  filter: TopTracksFilter = { limit: 10, timeRange: "short_term" }
+): Promise<TopSeveral> {
   const url = `${base}/top/${type}?time_range=${filter.timeRange}&limit=${filter.limit}`
   const result = await fetch(url, { method: "GET", headers: { Authorization: `Bearer ${token}` } })
   if (result.status !== 200) throw new Error(`type: ${result.type}`)

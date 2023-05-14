@@ -4,6 +4,7 @@ import Profile from "../pages/profile"
 import ErrorPage from "../pages/error"
 import TopSeveral from "../pages/top-tracks"
 import TopArtists from "../pages/top-artists"
+import Playlist from "../pages/playlist"
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
   {
     path: "/top-artists",
     element: <TopArtists />,
+  },
+  {
+    path: "/playlist",
+    element: <Playlist />,
   },
   {
     path: "/error",

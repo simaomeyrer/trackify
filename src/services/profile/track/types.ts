@@ -8,7 +8,7 @@ export interface Item {
   duration_ms: number
   explicit: boolean
   external_ids: ExternalIds
-  external_urls: ExternalUrls4
+  external_urls: ExternalUrls
   href: string
   id: string
   is_local: boolean
@@ -18,6 +18,16 @@ export interface Item {
   track_number: number
   type: string
   uri: string
+}
+
+export interface Tracks {
+  href: string
+  limit: number
+  next: string
+  offset: number
+  previous: string
+  total: number
+  items: Item[]
 }
 
 export interface Album {
@@ -49,14 +59,6 @@ export interface ExternalUrls {
   spotify: string
 }
 
-export interface ExternalUrls3 {
-  spotify: string
-}
-
 export interface ExternalIds {
   isrc: string
-}
-
-export interface ExternalUrls4 {
-  spotify: string
 }

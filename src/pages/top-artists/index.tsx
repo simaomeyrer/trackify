@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { fetchTop } from "../../services/profile"
 import SeveralTop from "../../components/several-top"
+import Button from "../../components/button"
 import { TopSeveral } from "../../services/profile/types"
 import "./style.css"
-import Icon from "../../components/Icon"
 
 export default function TopArtists() {
   const [topArtists, setTopArtists] = useState<TopSeveral>()
@@ -44,11 +44,6 @@ export default function TopArtists() {
               />
             )
           })}
-      </div>
-      <div className="share">
-        <button>
-          <Icon name="share" style="filled" />
-        </button>
       </div>
     </div>
   )

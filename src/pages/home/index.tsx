@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useSearchParams, useNavigate } from "react-router-dom"
-import { OSColorScheme } from "../../helpers/colorSchemeDetector"
+import { useRecoilState } from "recoil"
+import { sessionStore } from "../../store/session"
 import { auth, redirectToAuthCodeFlow } from "../../services/auth"
-import darkIcon from "./../../assets/imgs/darkIcon.png"
-import lightIcon from "./../../assets/imgs/lightIcon.png"
 import AccessDenied from "../denied"
 import "./styles.css"
 
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [token, setToken] = useState()
+  const [session, setSession] = useRecoilState(sessionStore)
   const navigate = useNavigate()
-  const image = OSColorScheme() === "dark" ? darkIcon : lightIcon
   const error = searchParams.get("error")
 
   async function getAuth() {
@@ -23,9 +21,10 @@ export default function Home() {
       const token = searchParams.get("code")
 
       if (token) {
-        const access_token = await auth(token)
-        if (access_token) {
-          localStorage.setItem("access_token", access_token)
+        const accessToken = await auth(token)
+        if (accessToken) {
+          setSession({ accessToken })
+          localStorage.setItem("access_token", accessToken)
           navigate("/profile")
         }
       }

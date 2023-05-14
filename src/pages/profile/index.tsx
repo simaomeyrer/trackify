@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useRecoilState } from "recoil"
+import { userStore } from "../../store/user"
+import { sessionStore } from "../../store/session"
 import { fetchProfile } from "../../services/profile"
-import { UserProfile } from "../../services/profile/types"
-import "./style.css"
 import Button from "../../components/button"
+import "./style.css"
 
 export default function Profile() {
-  const [profile, setProfile] = useState<UserProfile>()
+  const [user, setUser] = useRecoilState(userStore)
+  const [session, setSession] = useRecoilState(sessionStore)
   const navigate = useNavigate()
 
   useEffect(() => {
     async function getProfile() {
       try {
         if (localStorage.getItem("access_token")) {
-          setProfile(await fetchProfile(localStorage.getItem("access_token")!))
+          if (!user) {
+            const userProfile = await fetchProfile(session.accessToken!)
+            setUser(userProfile)
+          }
         }
       } catch (error) {
         console.error(error)
@@ -26,13 +32,13 @@ export default function Profile() {
   return (
     <div className="profile">
       <div className="profile-img">
-        <img src={profile?.images[0].url} alt={profile?.display_name} />
+        <img src={user?.images[0].url} alt={user?.display_name} />
       </div>
       <div className="profile-header">
         <h1>
           {`Olá, `}
-          <a href={profile?.external_urls.spotify} target="_blank">
-            {profile?.display_name}
+          <a href={user?.external_urls.spotify} target="_blank">
+            {user?.display_name}
           </a>
         </h1>
         <h3>Músicas mais ouvidas no último mês:</h3>

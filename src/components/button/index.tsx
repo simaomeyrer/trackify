@@ -5,6 +5,7 @@ interface ButtonProps {
   label: string
   routerLink?: string
   blockWidth?: boolean
+  action?: () => void
 }
 
 export default function Button(props: ButtonProps) {
@@ -15,10 +16,20 @@ export default function Button(props: ButtonProps) {
     <>
       {props.routerLink ? (
         <Link to={props.routerLink}>
-          <button style={props.blockWidth ? style : {}}>{props.label}</button>
+          <button
+            onClick={() => props.action && props.action()}
+            style={props.blockWidth ? style : {}}
+          >
+            {props.label}
+          </button>
         </Link>
       ) : (
-        <button>{props.label}</button>
+        <button
+          onClick={() => props.action && props.action()}
+          style={props.blockWidth ? style : {}}
+        >
+          {props.label}
+        </button>
       )}
     </>
   )

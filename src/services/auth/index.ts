@@ -7,13 +7,15 @@ export async function redirectToAuthCodeFlow() {
   const verifier = generateCodeVerifier(128)
   const challenge = await generateCodeChallenge(verifier)
   const params = new URLSearchParams()
+  const scopePermissions =
+    "user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private"
 
   localStorage.setItem("verifier", verifier)
 
   params.append("client_id", clientId)
   params.append("response_type", "code")
   params.append("redirect_uri", `${redirectURI}`)
-  params.append("scope", "user-read-private user-read-email user-top-read")
+  params.append("scope", scopePermissions)
   params.append("code_challenge_method", "S256")
   params.append("code_challenge", challenge)
 
