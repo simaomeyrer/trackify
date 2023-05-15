@@ -1,0 +1,13 @@
+.playlist-image {
+  align-self: center;
+  max-width: 320px;
+  margin-bottom: 8px;
+}
+
+.playlist-title {
+  margin: 0
+}
+
+.playlist-description {
+  margin-bottom: 18px;
+}
