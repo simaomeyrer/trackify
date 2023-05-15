@@ -27,7 +27,7 @@ export default function TopTracksPage() {
     const playlist = await create(user?.display_name!, session.accessToken!, content)
     if (playlist) {
       await addTracks(playlist.id, session.accessToken!, { uris: trackUris })
-      navigate("/playlist", { state: { playlist_id: playlist.id } })
+      navigate({ pathname: "/playlist", search: `?playlist_id=${playlist.id}` })
     }
   }
 
