@@ -24,23 +24,16 @@ export default function TopTracksPage() {
       description: `Essas são as suas músicas mais ouvidas do mês de ${DateTime.now().monthLong?.toLocaleLowerCase()}`,
       public: true,
     }
-    const playlist = await create(user?.display_name!, session.accessToken!, content)
-    if (playlist) {
-      await addTracks(playlist.id, session.accessToken!, { uris: trackUris })
-      navigate({ pathname: "/playlist", search: `?playlist_id=${playlist.id}` })
-    }
-  }
 
-  function RenderTopSeveralTracks() {
-    return (
-      <div className="top-tracks">
-        {topTracks?.items.map(({ name, artists }, index) => {
-          return (
-            <SeveralTop type="tracks" name={name} artists={artists} position={index} key={index} />
-          )
-        })}
-      </div>
-    )
+    try {
+      const playlist = await create(user?.id!, session.accessToken!, content)
+      if (playlist) {
+        await addTracks(playlist.id, session.accessToken!, { uris: trackUris })
+        navigate({ pathname: "/playlist", search: `?playlist_id=${playlist.id}` })
+      }
+    } catch (error) {
+      navigate("/error")
+    }
   }
 
   useEffect(() => {
@@ -64,7 +57,19 @@ export default function TopTracksPage() {
       {topTracks && (
         <>
           <h2>Suas top 10 músicas deste mês</h2>
-          <RenderTopSeveralTracks />
+          <div className="top-tracks">
+            {topTracks?.items.map(({ name, artists }, index) => {
+              return (
+                <SeveralTop
+                  type="tracks"
+                  name={name}
+                  artists={artists}
+                  position={index}
+                  key={index}
+                />
+              )
+            })}
+          </div>
           <div className="create-playlist">
             <Button blockWidth label="Criar Playlist" action={() => createPlaylist()} />
           </div>
