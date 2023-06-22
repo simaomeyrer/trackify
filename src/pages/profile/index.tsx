@@ -7,7 +7,6 @@ import { sessionStore } from "../../store/session"
 import { fetchProfile } from "../../services/profile"
 import Button from "../../components/button"
 import LoadingSpinner from "../../components/loading-spinner"
-import "react-loading-skeleton/dist/skeleton.css"
 import "./style.css"
 
 export default function Profile() {
