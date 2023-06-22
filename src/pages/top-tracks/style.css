@@ -1,6 +1,10 @@
 .top-tracks {
+  margin-top: 26px;
+}
+
+.top-tracks-items {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding-block: 28px;
+  padding-bottom: 30px;
 }

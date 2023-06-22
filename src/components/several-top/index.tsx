@@ -12,7 +12,7 @@ export default function SeveralTop(props: SeveralTopProps) {
             {props.position + 1}
           </h3>
         ) : (
-          <img src={props.image} height={45} width={45} alt="track-image"></img>
+          <img className="image" src={props.image} height={45} width={45} alt="track-image"></img>
         )}
       </div>
       <div className="description">

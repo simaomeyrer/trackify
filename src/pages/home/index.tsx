@@ -33,10 +33,12 @@ export default function Home() {
   })
 
   return error !== "access_denied" ? (
-    <div className="container home">
-      <div className="container-logo" />
+    <div className="home">
+      <div className="home-logo" />
       <h1>Trackify</h1>
-      <h3>Gere playlists com suas músicas mais ouvidas e mais</h3>
+      <div className="home-text">
+        <h3>Veja suas músicas e artistas mais ouvidos do mês</h3>
+      </div>
       <button onClick={async () => await getAuth()}>Iniciar</button>
     </div>
   ) : (

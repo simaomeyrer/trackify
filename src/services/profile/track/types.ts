@@ -12,6 +12,7 @@ export interface Item {
   href: string
   id: string
   is_local: boolean
+  images: Image[]
   name: string
   popularity: number
   preview_url: string

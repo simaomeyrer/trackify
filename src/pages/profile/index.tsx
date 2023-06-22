@@ -32,7 +32,7 @@ export default function Profile() {
   return (
     <div className="profile">
       <div className="profile-img">
-        <img src={user?.images[0].url} alt={user?.display_name} />
+        <img loading="lazy" src={user?.images[0].url} alt={user?.display_name} />
       </div>
       <div className="profile-header">
         <h1>
@@ -41,7 +41,7 @@ export default function Profile() {
             {user?.display_name}
           </a>
         </h1>
-        <h3>Músicas mais ouvidas no último mês:</h3>
+        <h3>Escolha o que quer ver por aqui:</h3>
       </div>
       <div className="actions">
         <Button label="Músicas mais ouvidas" routerLink="/top-tracks" blockWidth />

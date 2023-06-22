@@ -1,0 +1,4 @@
+.container-wrapper {
+  width: 100%;
+  max-width: var(--break-tablet-sm);
+}

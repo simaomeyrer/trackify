@@ -19,9 +19,10 @@ export default function TopTracksPage() {
   const navigate = useNavigate()
 
   async function createPlaylist() {
+    const month = DateTime.now().monthLong?.toLocaleLowerCase()
     const content = {
-      name: "Mais ouvidas do mês",
-      description: `Essas são as suas músicas mais ouvidas do mês de ${DateTime.now().monthLong?.toLocaleLowerCase()}`,
+      name: `Mais ouvidas do mês - ${month}`,
+      description: `Essas são as suas músicas mais ouvidas do mês de ${month}`,
       public: true,
     }
 
@@ -53,28 +54,26 @@ export default function TopTracksPage() {
     getTopTracks()
   }, [])
   return (
-    <div className="container">
-      {topTracks && (
-        <>
-          <h2>Suas top 10 músicas deste mês</h2>
-          <div className="top-tracks">
-            {topTracks?.items.map(({ name, artists }, index) => {
-              return (
-                <SeveralTop
-                  type="tracks"
-                  name={name}
-                  artists={artists}
-                  position={index}
-                  key={index}
-                />
-              )
-            })}
-          </div>
-          <div className="create-playlist">
-            <Button blockWidth label="Criar Playlist" action={() => createPlaylist()} />
-          </div>
-        </>
-      )}
-    </div>
+    topTracks && (
+      <div className="top-tracks">
+        <h2 className="top-tracks-title">Suas top 10 músicas deste mês</h2>
+        <div className="top-tracks-items">
+          {topTracks?.items.map(({ name, artists }, index) => {
+            return (
+              <SeveralTop
+                type="tracks"
+                name={name}
+                artists={artists}
+                position={index}
+                key={index}
+              />
+            )
+          })}
+        </div>
+        <div className="create-playlist">
+          <Button blockWidth label="Criar Playlist" action={() => createPlaylist()} />
+        </div>
+      </div>
+    )
   )
 }

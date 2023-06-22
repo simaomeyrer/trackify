@@ -29,17 +29,17 @@ export default function TopArtists() {
     getTopArtists()
   }, [])
   return (
-    <div className="container">
-      <h2>Seus top 10 artistas deste mês</h2>
-      <div className="top-artists">
+    <div className="top-artists">
+      <h2 className="top-artists-title">Seus top 10 artistas deste mês</h2>
+      <div className="top-artists-items">
         {topArtists &&
-          topArtists?.items.map(({ name, artists }, index) => {
+          topArtists?.items.map(({ name, artists, images }, index) => {
             return (
               <SeveralTop
                 type="artists"
                 name={name}
                 artists={artists}
-                position={index}
+                image={images.find((img) => img.height === 640 || 320 || 160)?.url}
                 key={index}
               />
             )

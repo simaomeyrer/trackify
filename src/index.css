@@ -5,6 +5,15 @@
   --secondary: #D8E9A8;
   --feature: #1E5128;
   --background-color: #242424;
+  --break-mobile-sm: 320px;
+  --break-mobile-md: 375px;
+  --break-mobile-lg: 425px;
+  --break-tablet-sm: 768px;
+  --break-tablet-md: 960px;
+  --break-tablet-lg: 1024px;
+  --break-laptop-sm: 1280px;
+  --break-laptop-md: 1366px;
+  --break-laptop-lg: 1440px;
   font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -18,6 +27,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }
 
 html {
@@ -56,6 +70,10 @@ h3 {
   margin-top: unset;
   margin-bottom: 8px;
   font-size: 1.2em;
+}
+
+h4 {
+  margin-top: unset;
 }
 
 button {

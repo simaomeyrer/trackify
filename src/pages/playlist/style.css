@@ -1,5 +1,9 @@
+.playlist {
+  display: flex;
+  justify-content: center;
+}
+
 .playlist-image {
-  align-self: center;
   max-width: 320px;
   margin-bottom: 8px;
 }
@@ -12,6 +16,6 @@
   margin-bottom: 18px;
 }
 
-.tracks {
-  margin-bottom: 18px;
+.playlist-tracks {
+  margin-block: 18px;
 }
