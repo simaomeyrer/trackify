@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react"
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { useRecoilState } from "recoil"
+import { mainStore } from "../../store/main"
 import { sessionStore } from "../../store/session"
 import { getPlaylist } from "../../services/playlist"
 import { Playlist } from "../../services/playlist/types"
 import SeveralTop from "../../components/several-top"
+import LoadingSpinner from "../../components/loading-spinner"
 import "./style.css"
 
 export default function CreatedPlaylist() {
   const navigate = useNavigate()
-  const location = useLocation()
+  const [main, setMainStore] = useRecoilState(mainStore)
   const [session, setSession] = useRecoilState(sessionStore)
   const [playlist, setPlaylist] = useState<Playlist>()
   const [searchParams, setSearchParams] = useSearchParams()
@@ -17,16 +19,22 @@ export default function CreatedPlaylist() {
 
   useEffect(() => {
     async function getProfile() {
+      setMainStore({ loading: true })
       try {
         setPlaylist(await getPlaylist(playlistId, session.accessToken!))
       } catch (error) {
         console.error(error)
         navigate("/error")
+      } finally {
+        setMainStore({ loading: false })
       }
     }
     getProfile()
   }, [])
-  return (
+
+  return main.loading ? (
+    <LoadingSpinner />
+  ) : (
     <div className="container">
       <div className="playlist">
         <img src={playlist?.images[0].url} className="playlist-image" alt="playlist image" />

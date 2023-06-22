@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 interface ButtonProps {
   label: string
+  disabled?: boolean
   routerLink?: string
   blockWidth?: boolean
   action?: () => void
@@ -19,6 +20,7 @@ export default function Button(props: ButtonProps) {
           <button
             onClick={() => props.action && props.action()}
             style={props.blockWidth ? style : {}}
+            disabled={props.disabled}
           >
             {props.label}
           </button>
@@ -27,6 +29,7 @@ export default function Button(props: ButtonProps) {
         <button
           onClick={() => props.action && props.action()}
           style={props.blockWidth ? style : {}}
+          disabled={props.disabled}
         >
           {props.label}
         </button>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { fetchTop } from "../../services/profile"
-import SeveralTop from "../../components/several-top"
-import Button from "../../components/button"
 import { TopSeveral } from "../../services/profile/types"
+import SeveralTop from "../../components/several-top"
+import LoadingSpinner from "../../components/loading-spinner"
 import "./style.css"
 
 export default function TopArtists() {
@@ -28,7 +28,7 @@ export default function TopArtists() {
     }
     getTopArtists()
   }, [])
-  return (
+  return topArtists ? (
     <div className="top-artists">
       <h2 className="top-artists-title">Seus top 10 artistas deste mês</h2>
       <div className="top-artists-items">
@@ -46,5 +46,7 @@ export default function TopArtists() {
           })}
       </div>
     </div>
+  ) : (
+    <LoadingSpinner />
   )
 }

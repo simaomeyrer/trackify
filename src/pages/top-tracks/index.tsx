@@ -3,17 +3,20 @@ import { useNavigate } from "react-router-dom"
 import { useRecoilState } from "recoil"
 import { DateTime } from "luxon"
 import { sessionStore } from "../../store/session"
+import { mainStore } from "../../store/main"
 import { userStore } from "../../store/user"
 import { fetchTop } from "../../services/profile"
 import { createPlaylist as create, addTracks } from "../../services/playlist"
 import { TopSeveral } from "../../services/profile/types"
 import SeveralTop from "../../components/several-top"
 import Button from "../../components/button"
+import LoadingSpinner from "../../components/loading-spinner"
 import "./style.css"
 
 export default function TopTracksPage() {
   const [topTracks, setTopTracks] = useState<TopSeveral>()
   const [session, setSession] = useRecoilState(sessionStore)
+  const [main, setMainStore] = useRecoilState(mainStore)
   const [user, setUser] = useRecoilState(userStore)
   const [trackUris, setTrackUris] = useState<string[]>([])
   const navigate = useNavigate()
@@ -22,11 +25,12 @@ export default function TopTracksPage() {
     const month = DateTime.now().monthLong?.toLocaleLowerCase()
     const content = {
       name: `Mais ouvidas do mês - ${month}`,
-      description: `Essas são as suas músicas mais ouvidas do mês de ${month}`,
+      description: `Essas são as suas músicas mais ouvidas do mês de ${month} - by Trackify`,
       public: true,
     }
 
     try {
+      setMainStore({ loading: true })
       const playlist = await create(user?.id!, session.accessToken!, content)
       if (playlist) {
         await addTracks(playlist.id, session.accessToken!, { uris: trackUris })
@@ -34,6 +38,8 @@ export default function TopTracksPage() {
       }
     } catch (error) {
       navigate("/error")
+    } finally {
+      setMainStore({ loading: false })
     }
   }
 
@@ -53,27 +59,27 @@ export default function TopTracksPage() {
     }
     getTopTracks()
   }, [])
-  return (
-    topTracks && (
-      <div className="top-tracks">
-        <h2 className="top-tracks-title">Suas top 10 músicas deste mês</h2>
-        <div className="top-tracks-items">
-          {topTracks?.items.map(({ name, artists }, index) => {
-            return (
-              <SeveralTop
-                type="tracks"
-                name={name}
-                artists={artists}
-                position={index}
-                key={index}
-              />
-            )
-          })}
-        </div>
-        <div className="create-playlist">
-          <Button blockWidth label="Criar Playlist" action={() => createPlaylist()} />
-        </div>
+
+  return topTracks ? (
+    <div className="top-tracks">
+      <h2 className="top-tracks-title">Suas top 10 músicas deste mês</h2>
+      <div className="top-tracks-items">
+        {topTracks?.items.map(({ name, artists }, index) => {
+          return (
+            <SeveralTop type="tracks" name={name} artists={artists} position={index} key={index} />
+          )
+        })}
       </div>
-    )
+      <div className="create-playlist">
+        <Button
+          disabled={main.loading}
+          blockWidth
+          label="Criar Playlist"
+          action={() => createPlaylist()}
+        />
+      </div>
+    </div>
+  ) : (
+    <LoadingSpinner />
   )
 }
