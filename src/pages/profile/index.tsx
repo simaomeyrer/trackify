@@ -15,6 +15,12 @@ export default function Profile() {
   const [main, setMainStore] = useRecoilState(mainStore)
   const navigate = useNavigate()
 
+  function userImage() {
+    return user?.images.length
+      ? user?.images[0].url
+      : `https://ui-avatars.com/api/?name=${user?.display_name}&size=155`
+  }
+
   useEffect(() => {
     async function getProfile() {
       try {
@@ -40,7 +46,7 @@ export default function Profile() {
   ) : (
     <div className="profile">
       <div className="profile-img">
-        <img loading="lazy" src={user?.images[0].url} alt={user?.display_name} />
+        <img loading="lazy" src={userImage()} alt={user?.display_name} />
       </div>
       <div className="profile-header">
         <h1>
