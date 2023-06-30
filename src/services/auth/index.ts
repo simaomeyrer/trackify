@@ -8,7 +8,7 @@ export async function redirectToAuthCodeFlow() {
   const challenge = await generateCodeChallenge(verifier)
   const params = new URLSearchParams()
   const scopePermissions =
-    "user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private"
+    "user-read-private user-top-read playlist-modify-public playlist-modify-private"
 
   localStorage.setItem("verifier", verifier)
 
