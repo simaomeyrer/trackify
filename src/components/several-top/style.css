@@ -6,7 +6,7 @@
 
 .position-number {
   margin: unset;
-  color: var(--feature);
+  color: var(--primary);
   font-weight: 600;
 }
 

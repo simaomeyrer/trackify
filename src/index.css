@@ -31,7 +31,9 @@
 
 #root {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 html {
@@ -109,13 +111,12 @@ button:focus-visible {
 }
 
 .footer {
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 0;
   width: 100%;
   font-size: 14px;
   font-weight: 800;
   background-color: var(--primary);
+  margin-top: auto;
 }

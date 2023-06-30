@@ -1,5 +1,5 @@
-.top-tracks {
-  margin-top: 26px;
+.top-tracks-title {
+  margin: 10px 0 30px 0px;
 }
 
 .top-tracks-items {
@@ -7,4 +7,8 @@
   flex-direction: column;
   gap: 12px;
   padding-bottom: 30px;
+}
+
+.create-playlist {
+  margin-bottom: 30px
 }

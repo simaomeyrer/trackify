@@ -6,15 +6,16 @@ export default function SeveralTop(props: SeveralTopProps) {
   return (
     <div className="several-top">
       <div className="position">
-        {props.position || props.position == 0 ? (
+        {(props.position || props.position == 0) && (
           <h3 className="position-number">
             {props.position < 9 && `0`}
             {props.position + 1}
           </h3>
-        ) : (
-          <img className="image" src={props.image} height={45} width={45} alt="track-image"></img>
         )}
       </div>
+      {props.image && (
+        <img className="image" src={props.image} height={45} width={45} alt="track-image"></img>
+      )}
       <div className="description">
         <h4 className="name">{props.name}</h4>
         {props.artists && (

@@ -40,6 +40,7 @@ export default function TopArtists() {
                 name={name}
                 artists={artists}
                 image={images.find((img) => img.height === 640 || 320 || 160)?.url}
+                position={index}
                 key={index}
               />
             )
