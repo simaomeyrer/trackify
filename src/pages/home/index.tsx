@@ -34,7 +34,7 @@ export default function Home() {
 
   return error !== "access_denied" ? (
     <div className="home">
-      <div className="home-logo" />
+      <div className="home-logo" onClick={() => window.open("https://spotify.com.br/", "_blank")} />
       <h1>Trackify</h1>
       <div className="home-text">
         <h3>Veja suas músicas e artistas mais ouvidos do mês</h3>
