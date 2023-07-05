@@ -4,6 +4,7 @@ import { fetchTop } from "../../services/profile"
 import { TopSeveral } from "../../services/profile/types"
 import SeveralTop from "../../components/several-top"
 import LoadingSpinner from "../../components/loading-spinner"
+import SpotifyLogo from "../../components/spotify-logo"
 import "./style.css"
 
 export default function TopArtists() {
@@ -30,10 +31,11 @@ export default function TopArtists() {
   }, [])
   return topArtists ? (
     <div className="top-artists">
+      <SpotifyLogo />
       <h2 className="top-artists-title">Seus top 10 artistas deste mês</h2>
       <div className="top-artists-items">
         {topArtists &&
-          topArtists?.items.map(({ name, artists, images }, index) => {
+          topArtists?.items.map(({ name, artists, images, external_urls }, index) => {
             return (
               <SeveralTop
                 type="artists"
@@ -41,6 +43,7 @@ export default function TopArtists() {
                 artists={artists}
                 image={images.find((img) => img.height === 640 || 320 || 160)?.url}
                 position={index}
+                externalLink={external_urls.spotify}
                 key={index}
               />
             )

@@ -7,10 +7,11 @@
 
 .home-logo {
   align-self: center;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.52), #242424), url('../../assets/imgs/darkIcon.png');
-  background-size: cover;
-  width: 320px;
-  height: 300px;
+  margin-top: 80px;
   margin-bottom: 22px;
   cursor: pointer;
+}
+
+.home-logo img {
+  max-height: calc(25vh);
 }

@@ -7,6 +7,7 @@ import { sessionStore } from "../../store/session"
 import { fetchProfile } from "../../services/profile"
 import Button from "../../components/button"
 import LoadingSpinner from "../../components/loading-spinner"
+import { Image } from "../../types/types"
 import "./style.css"
 
 export default function Profile() {
@@ -16,8 +17,14 @@ export default function Profile() {
   const navigate = useNavigate()
 
   function userImage() {
-    return user?.images.length
-      ? user?.images[0].url
+    const byBiggest = (a: Image, b: Image) => {
+      if (a.width < b.width) return 1
+      if (a.width > b.width) return -1
+      return 0
+    }
+    const userImages = user?.images.slice().sort(byBiggest)
+    return userImages?.length
+      ? userImages[0].url
       : `https://ui-avatars.com/api/?name=${user?.display_name}&size=155`
   }
 

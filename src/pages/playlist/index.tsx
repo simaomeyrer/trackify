@@ -7,6 +7,7 @@ import { getPlaylist } from "../../services/playlist"
 import { Playlist } from "../../services/playlist/types"
 import SeveralTop from "../../components/several-top"
 import LoadingSpinner from "../../components/loading-spinner"
+import SpotifyLogo from "../../components/spotify-logo"
 import "./style.css"
 
 export default function CreatedPlaylist() {
@@ -36,24 +37,27 @@ export default function CreatedPlaylist() {
     <LoadingSpinner />
   ) : (
     <div className="container">
+      <SpotifyLogo />
       <div className="playlist">
-        <img src={playlist?.images[0].url} className="playlist-image" alt="playlist image" />
-      </div>
-      <div className="playlist-content">
-        <h2 className="playlist-title">{playlist?.name}</h2>
-        <small className="playlist-description">{playlist?.description}</small>
-        <div className="playlist-tracks">
-          {playlist?.tracks.items.map(({ track }) => {
-            return (
-              <SeveralTop
-                key={track.id}
-                name={track.name}
-                image={track.album.images[0].url}
-                artists={track.artists}
-                type="tracks"
-              />
-            )
-          })}
+        <div className="playlist-image">
+          <img src={playlist?.images[0].url} className="playlist-image" alt="playlist image" />
+        </div>
+        <div className="playlist-content">
+          <h2 className="playlist-title">{playlist?.name}</h2>
+          <small className="playlist-description">{playlist?.description}</small>
+          <div className="playlist-tracks">
+            {playlist?.tracks.items.map(({ track }) => {
+              return (
+                <SeveralTop
+                  key={track.id}
+                  name={track.name}
+                  image={track.album.images[0].url}
+                  artists={track.artists}
+                  type="tracks"
+                />
+              )
+            })}
+          </div>
         </div>
       </div>
     </div>

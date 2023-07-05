@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;600&display=swap");
 
 :root {
-  --primary: #4E9F3D;
+  --primary: #1DB954;
   --secondary: #D8E9A8;
   --feature: #1E5128;
   --background-color: #242424;
@@ -85,7 +85,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #191414;
   cursor: pointer;
   transition: border-color 0.25s;
 }

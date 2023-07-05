@@ -6,4 +6,5 @@ export interface SeveralTopProps {
   image?: string
   position?: number
   artists?: Artist[]
+  externalLink?: string
 }

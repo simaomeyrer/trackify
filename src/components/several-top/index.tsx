@@ -1,10 +1,10 @@
 import React from "react"
-import "./style.css"
 import { SeveralTopProps } from "./types"
+import "./style.css"
 
 export default function SeveralTop(props: SeveralTopProps) {
   return (
-    <div className="several-top">
+    <div className="several-top" onClick={() => window.open(props.externalLink, "_blank")}>
       <div className="position">
         {(props.position || props.position == 0) && (
           <h3 className="position-number">

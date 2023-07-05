@@ -1,11 +1,15 @@
 .playlist {
   display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.playlist-image {
+  display: flex;
   justify-content: center;
 }
 
 .playlist-image {
-  max-width: 320px;
-  margin-bottom: 8px;
+  max-height: calc(25vh);
 }
 
 .playlist-title {
@@ -17,5 +21,8 @@
 }
 
 .playlist-tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   margin-block: 18px;
 }
