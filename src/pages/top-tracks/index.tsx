@@ -11,7 +11,7 @@ import { TopSeveral } from "../../services/profile/types"
 import SeveralTop from "../../components/several-top"
 import Button from "../../components/button"
 import LoadingSpinner from "../../components/loading-spinner"
-import SpotifyLogo from "../../components/spotify-logo"
+import Header from "../../components/header"
 import "./style.css"
 
 export default function TopTracksPage() {
@@ -63,7 +63,7 @@ export default function TopTracksPage() {
 
   return topTracks ? (
     <div className="top-tracks">
-      <SpotifyLogo />
+      <Header />
       <h2 className="top-tracks-title">Suas top 10 músicas deste mês</h2>
       <div className="top-tracks-items">
         {topTracks?.items.map(({ name, artists, external_urls }, index) => {

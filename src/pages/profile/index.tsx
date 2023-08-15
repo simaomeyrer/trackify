@@ -8,6 +8,7 @@ import { fetchProfile } from "../../services/profile"
 import Button from "../../components/button"
 import LoadingSpinner from "../../components/loading-spinner"
 import { Image } from "../../types/types"
+import Header from "../../components/header"
 import "./style.css"
 
 export default function Profile() {
@@ -52,6 +53,7 @@ export default function Profile() {
     <LoadingSpinner />
   ) : (
     <div className="profile">
+      <Header />
       <div className="profile-img">
         <img loading="lazy" src={userImage()} alt={user?.display_name} />
       </div>

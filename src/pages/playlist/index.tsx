@@ -7,7 +7,7 @@ import { getPlaylist } from "../../services/playlist"
 import { Playlist } from "../../services/playlist/types"
 import SeveralTop from "../../components/several-top"
 import LoadingSpinner from "../../components/loading-spinner"
-import SpotifyLogo from "../../components/spotify-logo"
+import Header from "../../components/header"
 import "./style.css"
 
 export default function CreatedPlaylist() {
@@ -37,7 +37,7 @@ export default function CreatedPlaylist() {
     <LoadingSpinner />
   ) : (
     <div className="container">
-      <SpotifyLogo />
+      <Header />
       <div className="playlist">
         <div className="playlist-image">
           <img src={playlist?.images[0].url} className="playlist-image" alt="playlist image" />

@@ -4,7 +4,7 @@ import { fetchTop } from "../../services/profile"
 import { TopSeveral } from "../../services/profile/types"
 import SeveralTop from "../../components/several-top"
 import LoadingSpinner from "../../components/loading-spinner"
-import SpotifyLogo from "../../components/spotify-logo"
+import Header from "../../components/header"
 import "./style.css"
 
 export default function TopArtists() {
@@ -31,7 +31,7 @@ export default function TopArtists() {
   }, [])
   return topArtists ? (
     <div className="top-artists">
-      <SpotifyLogo />
+      <Header />
       <h2 className="top-artists-title">Seus top 10 artistas deste mês</h2>
       <div className="top-artists-items">
         {topArtists &&
