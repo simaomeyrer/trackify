@@ -38,11 +38,11 @@ export default function Home() {
       <a className="home-logo" href="https://spotify.com.br" target="_blank">
         <img src={spotifyLogo} alt="spotify_logo" />
       </a>
-      <h1>Trackify</h1>
+      <h1>Top Tunes Discover</h1>
       <div className="home-text">
-        <h3>Veja suas músicas e artistas mais ouvidos do mês</h3>
+        <h3>See your most played tracks, artists and more</h3>
       </div>
-      <button onClick={async () => await getAuth()}>Iniciar</button>
+      <button onClick={async () => await getAuth()}>Start</button>
     </div>
   ) : (
     <AccessDenied />
