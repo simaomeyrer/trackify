@@ -1,0 +1,12 @@
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
