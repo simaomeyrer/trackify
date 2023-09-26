@@ -8,11 +8,10 @@ import { userStore } from "../../store/user"
 import { fetchTop } from "../../services/profile"
 import { createPlaylist as create, addTracks } from "../../services/playlist"
 import { TopSeveral } from "../../services/profile/types"
-import SeveralTop from "../../components/several-top"
-import Button from "../../components/button"
 import LoadingSpinner from "../../components/loading-spinner"
 import Header from "../../components/header"
 import "./style.css"
+import TopItemsImgGenerator from "../../components/top-items-img-generator"
 
 export default function TopTracksPage() {
   const [topTracks, setTopTracks] = useState<TopSeveral>()
@@ -63,30 +62,8 @@ export default function TopTracksPage() {
 
   return topTracks ? (
     <div className="top-tracks">
-      <Header />
-      <h2 className="top-tracks-title">Suas top 10 músicas deste mês</h2>
-      <div className="top-tracks-items">
-        {topTracks?.items.map(({ name, artists, external_urls }, index) => {
-          return (
-            <SeveralTop
-              type="tracks"
-              name={name}
-              artists={artists}
-              position={index}
-              key={index}
-              externalLink={external_urls.spotify}
-            />
-          )
-        })}
-      </div>
-      <div className="create-playlist">
-        <Button
-          disabled={main.loading}
-          blockWidth
-          label="Criar Playlist"
-          action={() => createPlaylist()}
-        />
-      </div>
+      <Header withLogo />
+      <TopItemsImgGenerator type="tracks" topSeveral={topTracks} />
     </div>
   ) : (
     <LoadingSpinner />

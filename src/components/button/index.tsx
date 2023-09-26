@@ -6,12 +6,14 @@ interface ButtonProps {
   disabled?: boolean
   routerLink?: string
   blockWidth?: boolean
+  variant?: "primary" | "success"
   action?: () => void
 }
 
 export default function Button(props: ButtonProps) {
-  const style = {
+  const style: React.CSSProperties = {
     width: "100%",
+    backgroundColor: props.variant && "var(--primary)",
   }
   return (
     <>

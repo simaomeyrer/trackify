@@ -1,0 +1,47 @@
+.top-tracks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 25px auto;
+}
+
+.top-tracks-content {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+  gap: 18px;
+}
+
+.top-tracks-content-title {
+  text-align: center;
+}
+
+.tracks {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.action-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

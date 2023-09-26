@@ -1,22 +1,40 @@
 .several-top {
   display: flex;
+  justify-content: space-between;
+}
+ 
+.track-infos {
+  display: flex;
   align-items: center;
   gap: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 320px;
 }
 
 .position-number {
   margin: unset;
-  color: var(--primary);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .name {
   margin: unset;
 }
 
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .artist-name {
   margin-left: 4px; 
   opacity: 0.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .image {

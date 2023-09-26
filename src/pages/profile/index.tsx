@@ -59,16 +59,16 @@ export default function Profile() {
       </div>
       <div className="profile-header">
         <h1>
-          {`Olá, `}
+          {`Hello, `}
           <a href={user?.external_urls.spotify} target="_blank">
             {user?.display_name}
           </a>
         </h1>
-        <h3>Escolha o que quer ver por aqui:</h3>
+        <h3>Choose what you want to see:</h3>
       </div>
       <div className="actions">
-        <Button label="Músicas mais ouvidas" routerLink="/top-tracks" blockWidth />
-        <Button label="Artistas mais ouvidos" routerLink="/top-artists" blockWidth />
+        <Button label="Most played tracks" routerLink="/top-tracks" blockWidth />
+        <Button label="Most listened to artists" routerLink="/top-artists" blockWidth />
       </div>
     </div>
   )

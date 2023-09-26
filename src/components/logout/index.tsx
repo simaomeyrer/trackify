@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { Router, useNavigate } from "react-router-dom"
 import Icon from "../icon/Icon"
 import "./style.css"
 

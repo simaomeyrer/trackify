@@ -6,6 +6,7 @@ import SeveralTop from "../../components/several-top"
 import LoadingSpinner from "../../components/loading-spinner"
 import Header from "../../components/header"
 import "./style.css"
+import TopTracksImgGenerator from "../../components/top-items-img-generator"
 
 export default function TopArtists() {
   const [topArtists, setTopArtists] = useState<TopSeveral>()
@@ -31,24 +32,8 @@ export default function TopArtists() {
   }, [])
   return topArtists ? (
     <div className="top-artists">
-      <Header />
-      <h2 className="top-artists-title">Seus top 10 artistas deste mês</h2>
-      <div className="top-artists-items">
-        {topArtists &&
-          topArtists?.items.map(({ name, artists, images, external_urls }, index) => {
-            return (
-              <SeveralTop
-                type="artists"
-                name={name}
-                artists={artists}
-                image={images.find((img) => img.height === 640 || 320 || 160)?.url}
-                position={index}
-                externalLink={external_urls.spotify}
-                key={index}
-              />
-            )
-          })}
-      </div>
+      <Header withLogo />
+      <TopTracksImgGenerator type="artists" topSeveral={topArtists} />
     </div>
   ) : (
     <LoadingSpinner />

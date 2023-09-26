@@ -1,14 +1,10 @@
 import React, { useState } from "react"
 
-export default function Icon(props: {
-  name: string
-  style?: "outlined" | "filled"
-  color?: string
-}) {
+export default function Icon(props: { name: string; color?: string }) {
   const style: React.CSSProperties = {
     color: props.color ?? "#FFFFFF",
-    fontVariationSettings: `'FILL' 1,
-    'wght' 400,
+    fontVariationSettings: `'FILL',
+    'wght' 500,
     'GRAD' 0,
     'opsz' 48`,
   }

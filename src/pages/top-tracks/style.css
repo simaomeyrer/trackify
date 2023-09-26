@@ -9,6 +9,9 @@
   padding-bottom: 30px;
 }
 
-.create-playlist {
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 30px
 }
