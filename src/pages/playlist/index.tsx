@@ -8,6 +8,7 @@ import { Playlist } from "../../services/playlist/types"
 import SeveralTop from "../../components/several-top"
 import LoadingSpinner from "../../components/loading-spinner"
 import Header from "../../components/header"
+import AppFooter from "../../components/app-footer"
 import "./style.css"
 
 export default function CreatedPlaylist() {
@@ -60,6 +61,7 @@ export default function CreatedPlaylist() {
           </div>
         </div>
       </div>
+      <AppFooter />
     </div>
   )
 }
