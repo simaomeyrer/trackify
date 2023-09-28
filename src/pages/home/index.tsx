@@ -6,8 +6,10 @@ import { auth, redirectToAuthCodeFlow } from "../../services/auth"
 import AccessDenied from "../denied"
 import spotifyLogo from "../../assets/imgs/Spotify_Icon_RGB_Green.png"
 import "./styles.css"
+import { useTranslation } from "react-i18next"
 
 export default function Home() {
+  const { t } = useTranslation()
   const [searchParams, setSearchParams] = useSearchParams()
   const [session, setSession] = useRecoilState(sessionStore)
   const navigate = useNavigate()
@@ -40,7 +42,7 @@ export default function Home() {
       </a>
       <h1>Top Tunes Discover</h1>
       <div className="home-text">
-        <h3>See your most played tracks, artists and more</h3>
+        <h3>{t("Veja suas músicas, artistas mais ouvidos e muito mais")}</h3>
       </div>
       <button onClick={async () => await getAuth()}>Start</button>
     </div>
