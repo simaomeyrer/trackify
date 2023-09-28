@@ -6,6 +6,7 @@ import { router } from "./router"
 import Container from "./components/container"
 import LoadingSpinner from "./components/loading-spinner"
 import "./index.css"
+import "./i18n"
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

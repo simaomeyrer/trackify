@@ -1,6 +1,7 @@
-import React, { useCallback, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useRecoilState } from "recoil"
 import { toPng } from "html-to-image"
+import { useTranslation } from "react-i18next"
 import { mainStore } from "../../store/main"
 import SeveralTop from "../several-top"
 import Button from "../button"
@@ -13,6 +14,7 @@ export default function TopItemsImgGenerator(props: {
   type: "tracks" | "artists"
   createPlaylistAction?: () => void
 }) {
+  const { t } = useTranslation()
   const [main, setMainStore] = useRecoilState(mainStore)
   const [downloadingImg, setDownloadingImg] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -40,7 +42,9 @@ export default function TopItemsImgGenerator(props: {
   return (
     <div className="top-container">
       <div className="top-content" ref={ref}>
-        <h2 className="top-content-title">Top 10 {props.type} of the month</h2>
+        <h2 className="top-content-title">
+          {t(`Top 10 ${props.type === "tracks" ? "músicas" : "artistas"} do mês`)}
+        </h2>
         <div className="items">
           {props.type === "tracks"
             ? props.topSeveral.items.map((item, index) => {
@@ -76,14 +80,14 @@ export default function TopItemsImgGenerator(props: {
         <Button
           disabled={downloadingImg}
           blockWidth
-          label="Download image"
+          label={t("Baixar imagem")}
           action={() => downloadImage()}
         />
         {props.type == "tracks" && (
           <Button
             disabled={main.loading}
             blockWidth
-            label="Create a playlist"
+            label={t("Criar playlist")}
             action={props.createPlaylistAction}
           />
         )}

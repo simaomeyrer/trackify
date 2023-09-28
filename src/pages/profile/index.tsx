@@ -1,4 +1,5 @@
-import { useRecoilState, useRecoilValue } from "recoil"
+import { useRecoilValue } from "recoil"
+import { useTranslation } from "react-i18next"
 import { currentUser } from "../../store/user"
 import Button from "../../components/button"
 import Header from "../../components/header"
@@ -6,6 +7,7 @@ import { Image } from "../../types/types"
 import "./style.css"
 
 export default function Profile() {
+  const { t } = useTranslation()
   const user = useRecoilValue(currentUser)
 
   function userImage() {
@@ -28,16 +30,16 @@ export default function Profile() {
       </div>
       <div className="profile-header">
         <h1>
-          {`Hello, `}
+          {`${t("Olá")}, `}
           <a href={user?.external_urls.spotify} target="_blank">
             {user?.display_name}
           </a>
         </h1>
-        <h3>Choose what you want to see:</h3>
+        <h3>{t("Escolha o que você quer ver por aqui")}:</h3>
       </div>
       <div className="actions">
-        <Button label="Most played tracks" routerLink="/top-tracks" blockWidth />
-        <Button label="Most listened to artists" routerLink="/top-artists" blockWidth />
+        <Button label={t("Músicas mais tocadas")} routerLink="/top-tracks" blockWidth />
+        <Button label={t("Artistas mais ouvidos")} routerLink="/top-artists" blockWidth />
       </div>
     </div>
   )
