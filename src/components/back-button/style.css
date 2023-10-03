@@ -1,0 +1,8 @@
+.back-button {
+  display: flex;
+  align-items: center;
+}
+
+.back-button:hover {
+  cursor: pointer;
+}

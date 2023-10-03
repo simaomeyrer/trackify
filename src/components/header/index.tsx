@@ -1,12 +1,17 @@
 import React from "react"
-import SpotifyLogo from "../spotify-logo"
 import Logout from "../logout"
+import BackButton from "../back-button"
+import { useLocation } from "react-router-dom"
 import "./style.css"
 
-export default function Header(props: { withLogo?: boolean }) {
+export default function Header() {
+  const route = useLocation()
+  const excludedRoutes = ["/profile"]
+  const showBackButton = !excludedRoutes.includes(route.pathname)
+
   return (
-    <div className="header" style={{ justifyContent: props.withLogo ? "space-between" : "end" }}>
-      {props.withLogo && <SpotifyLogo color="black" />}
+    <div className="header" style={showBackButton ? {} : { justifyContent: "flex-end" }}>
+      {showBackButton && <BackButton />}
       <Logout />
     </div>
   )
