@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import { useRecoilState } from "recoil"
 import { toPng } from "html-to-image"
 import { useTranslation } from "react-i18next"
@@ -9,11 +9,13 @@ import { TopSeveral } from "../../services/profile/types"
 import AppFooter from "../app-footer"
 import "./style.css"
 
-export default function TopItemsImgGenerator(props: {
+interface TopItemsGenerator {
   topSeveral: TopSeveral
   type: "tracks" | "artists"
   createPlaylistAction?: () => void
-}) {
+}
+
+export default function TopItemsImgGenerator(props: TopItemsGenerator) {
   const { t } = useTranslation()
   const [main, setMainStore] = useRecoilState(mainStore)
   const [downloadingImg, setDownloadingImg] = useState(false)
