@@ -44,7 +44,7 @@ export default function Home() {
       <div className="home-text">
         <h3>{t("Veja suas músicas, artistas mais ouvidos e muito mais")}</h3>
       </div>
-      <button onClick={async () => await getAuth()}>Start</button>
+      <button onClick={async () => await getAuth()}>Começar</button>
     </div>
   ) : (
     <AccessDenied />
