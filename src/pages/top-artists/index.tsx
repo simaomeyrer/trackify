@@ -10,7 +10,7 @@ export default function TopArtists() {
 
   return (
     <div className="top-artists">
-      <Header withLogo />
+      <Header />
       <TopTracksImgGenerator type="artists" topSeveral={topArtists} />
     </div>
   )
