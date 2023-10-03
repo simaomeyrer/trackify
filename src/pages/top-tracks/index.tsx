@@ -43,7 +43,7 @@ export default function TopTracksPage() {
 
   return (
     <div className="top-tracks">
-      <Header withLogo />
+      <Header />
       <TopItemsImgGenerator
         type="tracks"
         topSeveral={topTracks}
