@@ -12,7 +12,7 @@ export default function Logout() {
   }
   return (
     <div className="logout" onClick={() => logOut()}>
-      <Icon name="close" color="#000000" />
+      <Icon name="close" />
     </div>
   )
 }
