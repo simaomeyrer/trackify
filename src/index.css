@@ -2,9 +2,14 @@
 
 :root {
   --primary: #1DB954;
+  --danger: red;
+  --warning: yellow;
   --secondary: #D8E9A8;
   --feature: #1E5128;
+  --inverted: #242424;
   --background-color: #242424;
+  --dark-button-background-color: #191414;
+  --dark-background-color: #191414;
   --break-mobile-sm: 320px;
   --break-mobile-md: 375px;
   --break-mobile-lg: 425px;
@@ -85,7 +90,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #191414;
+  background-color: var(--dark-button-background-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }

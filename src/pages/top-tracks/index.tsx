@@ -21,8 +21,8 @@ export default function TopTracksPage() {
   async function createPlaylist() {
     const month = DateTime.now().monthLong?.toLowerCase()
     const content = {
-      name: `Most played of the month - ${month}`,
-      description: `There are your most played tracks of ${month} - by Top Tunes Discover`,
+      name: `As mais tocadas do mês - ${month}`,
+      description: `As mais tocadas de ${month} - by Top Tunes Discover`,
       public: true,
     }
 

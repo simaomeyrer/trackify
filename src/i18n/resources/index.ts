@@ -12,6 +12,8 @@ export default {
       "Top 10 artistas do mês": "Top 10 artists of the month",
       "Baixar imagem": "Download image",
       "Criar playlist": "Create a playlist",
+      "As mais tocadas do mês": "Most played of the month",
+      "As mais tocadas de ": "There are your most played tracks of",
     },
   },
 }

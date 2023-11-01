@@ -6,14 +6,22 @@ interface ButtonProps {
   disabled?: boolean
   routerLink?: string
   blockWidth?: boolean
-  variant?: "primary" | "success"
+  variant?: "primary" | "secondary" | "success" | "danger" | "warning" | "inverted"
   action?: () => void
 }
 
 export default function Button(props: ButtonProps) {
+  const buttonVariants = {
+    primary: "--primary",
+    secondary: "--secondary",
+    success: "--success",
+    danger: "--danger",
+    warning: "--warning",
+    inverted: "--inverted",
+  }
   const style: React.CSSProperties = {
-    width: "100%",
-    backgroundColor: props.variant && "var(--primary)",
+    width: props.blockWidth ? "100%" : "unset",
+    backgroundColor: props.variant && `var(${buttonVariants[props.variant]})`,
   }
   return (
     <>
@@ -21,7 +29,7 @@ export default function Button(props: ButtonProps) {
         <Link to={props.routerLink}>
           <button
             onClick={() => props.action && props.action()}
-            style={props.blockWidth ? style : {}}
+            style={style}
             disabled={props.disabled}
           >
             {props.label}
@@ -30,7 +38,7 @@ export default function Button(props: ButtonProps) {
       ) : (
         <button
           onClick={() => props.action && props.action()}
-          style={props.blockWidth ? style : {}}
+          style={style}
           disabled={props.disabled}
         >
           {props.label}

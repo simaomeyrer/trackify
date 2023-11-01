@@ -3,3 +3,14 @@
   align-items: center;
   cursor: pointer;
 }
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}

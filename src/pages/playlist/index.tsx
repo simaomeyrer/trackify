@@ -10,8 +10,10 @@ import LoadingSpinner from "../../components/loading-spinner"
 import Header from "../../components/header"
 import AppFooter from "../../components/app-footer"
 import "./style.css"
+import { useTranslation } from "react-i18next"
 
 export default function CreatedPlaylist() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [main, setMainStore] = useRecoilState(mainStore)
   const [session, setSession] = useRecoilState(sessionStore)
@@ -44,8 +46,8 @@ export default function CreatedPlaylist() {
           <img src={playlist?.images[0].url} className="playlist-image" alt="playlist image" />
         </div>
         <div className="playlist-content">
-          <h2 className="playlist-title">{playlist?.name}</h2>
-          <small className="playlist-description">{playlist?.description}</small>
+          <h2 className="playlist-title">{t(playlist?.name!)}</h2>
+          <small className="playlist-description">{t(playlist?.description!)}</small>
           <div className="playlist-tracks">
             {playlist?.tracks.items.map(({ track }) => {
               return (
