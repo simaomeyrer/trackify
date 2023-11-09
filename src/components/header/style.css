@@ -1,5 +1,32 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.navigation {
+  display: flex;
+  gap: 22px;
+}
+
+.route {
+  margin: unset;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.route:hover {
+  color: var(--primary);
+}
+.active {
+  position: relative;
+}
+.active:after {
+    content: "";
+    display: block;
+    border-top: 2px solid var(--text-bright-accent,#117a37);
+    width: 1em;
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 0.5em);
 }

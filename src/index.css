@@ -46,9 +46,10 @@ a {
   font-weight: 500;
   color: var(--primary);
   text-decoration: inherit;
+  transition: 0.25s;
 }
 a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 body {
