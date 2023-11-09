@@ -1,8 +1,9 @@
 .several-top {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
- 
+
 .track-infos {
   display: flex;
   align-items: center;
@@ -29,7 +30,7 @@
 }
 
 .artist-name {
-  margin-left: 4px; 
+  margin-left: 4px;
   opacity: 0.5;
   overflow: hidden;
   text-overflow: ellipsis;

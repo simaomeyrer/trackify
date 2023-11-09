@@ -10,6 +10,7 @@ export default {
       "Artistas mais ouvidos": "Most listened artists",
       "Top 10 músicas do mês": "Top 10 tracks of the month",
       "Top 10 artistas do mês": "Top 10 artists of the month",
+      "Aqui estão suas músicas mais tocadas de": "There are your most played tracks of",
       "Baixar imagem": "Download image",
       "Criar playlist": "Create a playlist",
     },
