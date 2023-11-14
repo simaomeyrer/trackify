@@ -8,7 +8,9 @@ function StaticContent(props: { title: string; children: JSX.Element }) {
     <>
       <Header />
       <section className="static-content">
-        {props.title ? <h1>{props.title}</h1> : null}
+        <header className="static-header">
+          {props.title ? <h1 className="static-title">{props.title}</h1> : null}
+        </header>
         {props.children}
       </section>
       <AppFooter noLogo withCredits />

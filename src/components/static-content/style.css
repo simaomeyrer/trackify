@@ -5,3 +5,10 @@
     margin: 40px;
   }
 }
+
+.static-header {
+  margin-bottom: 36px;
+}
+.static-title {
+  margin: 0;
+}
