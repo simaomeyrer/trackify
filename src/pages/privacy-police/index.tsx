@@ -7,7 +7,9 @@ function PrivacyPolice() {
     <StaticContent title="Politica de privacidade">
       <>
         <p>
-          Todos os dados expostos aqui são provenientes da{" "}
+          O Top Tunes Discover foi desenvolvido por quem gosta de música para compartilhar com quem
+          também gosta de música, então, fique tranquilo, todos os dados expostos aqui são
+          provenientes da{" "}
           <a href="https://developer.spotify.com/documentation/web-api" target="blank">
             API Web
           </a>{" "}
@@ -24,10 +26,6 @@ function PrivacyPolice() {
             páginas de aplicativos
           </a>{" "}
           no Spotify.
-        </p>
-        <p>
-          O Top Tunes Discover foi desenvolvido por quem gosta de música para compartilhar com quem
-          também gosta de música, a
         </p>
       </>
     </StaticContent>

@@ -24,7 +24,7 @@
 .active:after {
     content: "";
     display: block;
-    border-top: 2px solid var(--text-bright-accent,#117a37);
+    border-top: 2px solid var(--primary);
     width: 1em;
     position: absolute;
     bottom: 0px;
