@@ -3,7 +3,7 @@ import Header from "../header"
 import AppFooter from "../app-footer"
 import "./style.css"
 
-function StaticContent(props: { title: string; children: JSX.Element }) {
+function StaticContent(props: { title: string; children: JSX.Element; footer?: JSX.Element }) {
   return (
     <>
       <Header />
@@ -13,7 +13,7 @@ function StaticContent(props: { title: string; children: JSX.Element }) {
         </header>
         {props.children}
       </section>
-      <AppFooter noLogo withCredits />
+      {props.footer ? props.footer : <AppFooter noLogo withCredits />}
     </>
   )
 }

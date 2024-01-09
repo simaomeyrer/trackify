@@ -24,27 +24,27 @@ export default function Header() {
     <div className="header" style={showBackButton ? { justifyContent: "space-between" } : {}}>
       {showBackButton ? <BackButton /> : null}
       <div className="navigation">
-        <h4
+        <h5
           className={`route ${path === "profile" ? "active" : null}`}
           onClick={() => navigate("/profile")}
         >
           Perfil
-        </h4>
-        <h4
+        </h5>
+        <h5
           className={`route ${path === "about" ? "active" : null}`}
           onClick={() => navigate("/about")}
         >
           Sobre
-        </h4>
-        <h4
+        </h5>
+        <h5
           className={`route ${path === "privacy-policy" ? "active" : null}`}
           onClick={() => navigate("/privacy-policy")}
         >
           Política de privacidade
-        </h4>
-        <h4 className={"route"} onClick={() => logOut()}>
+        </h5>
+        <h5 className={"route"} onClick={() => logOut()}>
           Sair
-        </h4>
+        </h5>
       </div>
     </div>
   )

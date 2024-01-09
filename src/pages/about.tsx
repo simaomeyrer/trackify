@@ -14,13 +14,12 @@ function About() {
           Essa aplicação foi desenvolvida para matar aquela curiosidade de saber quais são suas
           músicas, bandas e artistas preferidos e ainda poder compartilhar nas redes.
         </p>
-        <p>A medida do possível a aplicação vai escalar e disponibilizar mais curiosidades.</p>
+        <p>
+          A medida do possível a aplicação vai escalar e disponibilizar mais filtros e conteúdos.
+        </p>
         <hr style={{ marginTop: "25px", marginBottom: "25px", border: "" }} />
         <h1 style={{ marginBottom: "36px" }}>FAQ</h1>
-        <h3>
-          Os dados apresentados nas seções de músicas e artistas mais ouvidos são obtidos de qual
-          base de dados?
-        </h3>
+        <h3>Os dados de músicas e artistas mais ouvidos são obtidos de qual base de dados?</h3>
         <p style={{ marginTop: "unset" }}>
           A aplicação foi desenvolvida a partir da busca de todos os dados da{" "}
           <a href="https://developer.spotify.com/documentation/web-api" target="_blank">
@@ -30,9 +29,9 @@ function About() {
         </p>
         <h3>Meus artistas e/ou músicas mais ouvidas parecem não fazer sentido:</h3>
         <p style={{ marginTop: "unset" }}>
-          O correto a afirmar é sim, pode acontecer, apesar dos dados serem provenientes diretamente
-          do Spotify a inconsistência de músicas/artistas mais ouvidos pode ocorrer pois o período
-          fornecido para as buscas é algo aproximado (cerca de 4 semanas) e não um período exato.
+          Apesar dos dados serem provenientes diretamente do Spotify a inconsistência de
+          músicas/artistas mais ouvidos pode ocorrer pois o período fornecido para as buscas é algo
+          aproximado (cerca de 4 semanas) e não um período exato.
         </p>
       </>
     </StaticContent>

@@ -12,7 +12,7 @@ interface ButtonProps {
 
 export default function Button(props: ButtonProps) {
   const style: React.CSSProperties = {
-    width: "100%",
+    width: props.blockWidth ? "100%" : "",
     backgroundColor: props.variant && "var(--primary)",
   }
   return (
@@ -21,7 +21,7 @@ export default function Button(props: ButtonProps) {
         <Link to={props.routerLink}>
           <button
             onClick={() => props.action && props.action()}
-            style={props.blockWidth ? style : {}}
+            style={style}
             disabled={props.disabled}
           >
             {props.label}
@@ -30,7 +30,7 @@ export default function Button(props: ButtonProps) {
       ) : (
         <button
           onClick={() => props.action && props.action()}
-          style={props.blockWidth ? style : {}}
+          style={style}
           disabled={props.disabled}
         >
           {props.label}

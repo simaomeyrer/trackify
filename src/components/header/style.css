@@ -7,6 +7,7 @@
 .navigation {
   display: flex;
   gap: 22px;
+  font-size: 18px;
 }
 
 .route {
