@@ -21,6 +21,8 @@
 
 .name {
   margin: unset;
+  overflow: inherit;
+  text-overflow: ellipsis;
 }
 
 .description {

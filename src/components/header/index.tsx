@@ -37,10 +37,16 @@ export default function Header() {
           Sobre
         </h5>
         <h5
+          className={`route ${path === "blog" ? "active" : null}`}
+          onClick={() => navigate("/blog")}
+        >
+          Blog
+        </h5>
+        <h5
           className={`route ${path === "privacy-policy" ? "active" : null}`}
           onClick={() => navigate("/privacy-policy")}
         >
-          Política de privacidade
+          Políticas
         </h5>
         <h5 className={"route"} onClick={() => logOut()}>
           Sair

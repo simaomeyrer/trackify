@@ -7,6 +7,8 @@ import TopArtists from "../pages/top-artists"
 import Playlist from "../pages/playlist"
 import PrivacyPolice from "../pages/privacy-police"
 import About from "../pages/about"
+import Blog from "../pages/blog"
+import Post1 from "../pages/blog/post-1"
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,7 @@ export const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/top-tracks",
@@ -36,6 +39,14 @@ export const router = createBrowserRouter([
   {
     path: "/privacy-policy",
     element: <PrivacyPolice />,
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
+  },
+  {
+    path: "/blog/always-the-same-music",
+    element: <Post1 />,
   },
   {
     path: "/error",

@@ -20,10 +20,12 @@ export default function TopTracksPage() {
   const navigate = useNavigate()
 
   async function createPlaylist() {
-    const month = t(DateTime.now().monthLong?.toLowerCase() ?? '')
+    const month = t(DateTime.now().monthLong?.toLowerCase() ?? "")
     const content = {
-      name: ` ${t('Top 10 músicas do mês')} - ${month}`,
-      description: `${t('Aqui estão suas músicas mais tocadas de')} ${month} - by Top Tunes Discover`,
+      name: ` ${t("Top 10 músicas do mês")} - ${month}`,
+      description: `${t(
+        "Aqui estão suas músicas mais tocadas de"
+      )} ${month} - by Top Tunes Discover`,
       public: true,
     }
 
