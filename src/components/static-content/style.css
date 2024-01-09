@@ -1,11 +1,12 @@
 .static-content {
   margin: 28px 10px;
+}
 
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+  .static-content {
     margin: 40px;
   }
 }
-
 .static-header {
   margin-bottom: 26px;
 }
