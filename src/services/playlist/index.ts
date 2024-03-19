@@ -32,7 +32,7 @@ export async function addTracks(playlistId: string, token: string, body: Playlis
     body: JSON.stringify(body),
   })
 
-  if (result.status !== 201) throw new Error(`type: ${result.type}`)
+  if (result.status !== 200) throw new Error(`type: ${result.type}`)
 
   return await result.json()
 }
