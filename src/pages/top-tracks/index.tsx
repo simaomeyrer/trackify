@@ -9,8 +9,8 @@ import { topTracksData } from "../../store/tracks"
 import { createPlaylist as create, addTracks } from "../../services/playlist"
 import Header from "../../components/header"
 import TopItemsImgGenerator from "../../components/top-items-img-generator"
-import "./style.css"
 import { t } from "i18next"
+import "./style.css"
 
 export default function TopTracksPage() {
   const [session, setSession] = useRecoilState(sessionStore)
@@ -20,12 +20,12 @@ export default function TopTracksPage() {
   const navigate = useNavigate()
 
   async function createPlaylist() {
-    const month = t(DateTime.now().monthLong?.toLowerCase() ?? "")
+    const date = DateTime.now().setLocale(navigator.language)
     const content = {
-      name: ` ${t("Top 10 músicas do mês")} - ${month}`,
-      description: `${t(
-        "Aqui estão suas músicas mais tocadas de"
-      )} ${month} - by Top Tunes Discover`,
+      name: ` ${t("Top 10 músicas do mês")} - ${date.monthLong}`,
+      description: `${t("Aqui estão suas músicas mais tocadas de")} ${
+        date.monthLong
+      } - by Top Tunes`,
       public: true,
     }
 
