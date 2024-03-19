@@ -13,6 +13,11 @@ export default {
       "Aqui estão suas músicas mais tocadas de": "There are your most played tracks of",
       "Baixar imagem": "Download image",
       "Criar playlist": "Create a playlist",
+      "Criado por": "Made by",
+      Perfil: "Profile",
+      Sobre: "About",
+      Políticas: "Policies",
+      Sair: "Quit",
     },
   },
 }

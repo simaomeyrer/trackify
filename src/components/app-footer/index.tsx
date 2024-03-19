@@ -1,5 +1,6 @@
 import React from "react"
 import SpotifyLogo from "../spotify-logo"
+import { t } from "i18next"
 import "./style.css"
 
 export default function AppFooter(props: { noLogo?: boolean; withCredits?: boolean }) {
@@ -12,7 +13,7 @@ export default function AppFooter(props: { noLogo?: boolean; withCredits?: boole
       {props.noLogo ? null : <SpotifyLogo color="green" />}
       {props.withCredits ? (
         <small>
-          Criado por{" "}
+          {t("Criado por")}{" "}
           <a href="https://www.linkedin.com/in/simao-meyrer" target="_blank">
             Simão Meyrer
           </a>

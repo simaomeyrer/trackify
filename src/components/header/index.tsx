@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import BackButton from "../back-button"
+import { t } from "i18next"
 import "./style.css"
 
 export default function Header() {
@@ -28,13 +29,13 @@ export default function Header() {
           className={`route ${path === "profile" ? "active" : null}`}
           onClick={() => navigate("/profile")}
         >
-          Perfil
+          {t("Perfil")}
         </h5>
         <h5
           className={`route ${path === "about" ? "active" : null}`}
           onClick={() => navigate("/about")}
         >
-          Sobre
+          {t("Sobre")}
         </h5>
         <h5
           className={`route ${path === "blog" ? "active" : null}`}
@@ -46,7 +47,7 @@ export default function Header() {
           className={`route ${path === "privacy-policy" ? "active" : null}`}
           onClick={() => navigate("/privacy-policy")}
         >
-          Políticas
+          {t("Políticas")}
         </h5>
         <h5 className={"route"} onClick={() => logOut()}>
           Sair
