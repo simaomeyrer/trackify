@@ -14,7 +14,7 @@ export default function AppFooter(props: { noLogo?: boolean; withCredits?: boole
       {props.withCredits ? (
         <small>
           {t("Criado por")}{" "}
-          <a href="https://www.linkedin.com/in/simao-meyrer" target="_blank">
+          <a href="https://www.linkedin.com/in/sim%C3%A3o-meyrer/" target="_blank">
             Simão Meyrer
           </a>
         </small>

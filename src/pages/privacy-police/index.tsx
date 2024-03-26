@@ -4,7 +4,7 @@ import "./style.css"
 
 function PrivacyPolice() {
   return (
-    <StaticContent title="Politica de privacidade">
+    <StaticContent title="Política de privacidade">
       <>
         <p>
           O Top Tunes Discover foi desenvolvido por quem gosta de música para compartilhar com quem
@@ -13,7 +13,7 @@ function PrivacyPolice() {
           <a href="https://developer.spotify.com/documentation/web-api" target="blank">
             API Web
           </a>{" "}
-          pública do Spotify e não sofrem quaisquer tipo de manipulação.
+          do Spotify e não sofrem quaisquer tipo de manipulação.
         </p>
         <p>Nenhum tipo de dado, imagem e afins são salvos para uso posterior ou de terceiros.</p>
         <p>

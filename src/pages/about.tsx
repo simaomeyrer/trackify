@@ -11,15 +11,12 @@ function About() {
           criação da playlist baseadas num intervalo de cerca de 30 dias.
         </p>
         <p>
-          Essa aplicação foi desenvolvida para matar aquela curiosidade de saber quais são suas
-          músicas, bandas e artistas preferidos e ainda poder compartilhar nas redes.
-        </p>
-        <p>
-          A medida do possível a aplicação vai escalar e disponibilizar mais filtros e conteúdos.
+          A aplicação foi desenvolvida para matar aquela curiosidade de saber quais são suas
+          músicas, bandas e artistas preferidos.
         </p>
         <hr style={{ marginTop: "25px", marginBottom: "25px", border: "" }} />
         <h1 style={{ marginBottom: "36px" }}>FAQ</h1>
-        <h3>Os dados de músicas e artistas mais ouvidos são obtidos de qual base de dados?</h3>
+        <h3>Como funciona a busca das músicas e artistas mais ouvidos?</h3>
         <p style={{ marginTop: "unset" }}>
           A aplicação foi desenvolvida a partir da busca de todos os dados da{" "}
           <a href="https://developer.spotify.com/documentation/web-api" target="_blank">
@@ -29,9 +26,9 @@ function About() {
         </p>
         <h3>Meus artistas e/ou músicas mais ouvidas parecem não fazer sentido:</h3>
         <p style={{ marginTop: "unset" }}>
-          Apesar dos dados serem provenientes diretamente do Spotify a inconsistência de
-          músicas/artistas mais ouvidos pode ocorrer pois o período fornecido para as buscas é algo
-          aproximado (cerca de 4 semanas) e não um período exato.
+          Apesar dos dados serem provenientes do Spotify a inconsistência de músicas/artistas mais
+          ouvidos pode ocorrer pois o período do filtro atual para as buscas é algo aproximado
+          (cerca de 4 semanas).
         </p>
       </>
     </StaticContent>
