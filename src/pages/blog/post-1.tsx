@@ -2,10 +2,16 @@ import React from "react"
 import StaticContent from "../../components/static-content"
 
 export default function Blog() {
+  const metaTag = document.getElementsByTagName("meta").item(0)
+  metaTag?.setAttribute(
+    "description",
+    "Always the same music - Nem só de Latino vivem as músicas “iguais”?"
+  )
   return (
     <div>
-      <StaticContent title="Nem só de Latino vivem as músicas “iguais”">
+      <StaticContent title="Always the same music">
         <>
+          <p>Nem só de Latino vivem as músicas “iguais”?</p>
           <p>
             Tem música da Beyonce com <a href="https://pt.wikipedia.org/wiki/Riff">riff</a> de uma
             banda totalmente desconhecida, tem intro do Charlie Brown Jr. a partir de uma do

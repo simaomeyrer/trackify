@@ -6,7 +6,7 @@ import TopSeveral from "../pages/top-tracks"
 import TopArtists from "../pages/top-artists"
 import Playlist from "../pages/playlist"
 import PrivacyPolice from "../pages/privacy-police"
-import About from "../pages/about"
+import About from "../pages/about/about"
 import Blog from "../pages/blog"
 import Post1 from "../pages/blog/post-1"
 

@@ -11,6 +11,7 @@ import Header from "../../components/header"
 import TopItemsImgGenerator from "../../components/top-items-img-generator"
 import { t } from "i18next"
 import "./style.css"
+import { updateMetaTags } from "../../helpers/updateMetaTags"
 
 export default function TopTracksPage() {
   const [session, setSession] = useRecoilState(sessionStore)
@@ -18,11 +19,12 @@ export default function TopTracksPage() {
   const user = useRecoilValue(currentUser)
   const topTracks = useRecoilValue(topTracksData)
   const navigate = useNavigate()
+  const playlistName = t("Top 10 músicas do mês")
 
   async function createPlaylist() {
     const date = DateTime.now().setLocale(navigator.language)
     const content = {
-      name: ` ${t("Top 10 músicas do mês")} - ${date.monthLong}`,
+      name: ` ${playlistName} - ${date.monthLong}`,
       description: `${t("Aqui estão suas músicas mais tocadas de")} ${
         date.monthLong
       } - by Top Tunes`,
@@ -43,6 +45,10 @@ export default function TopTracksPage() {
       setMainStore({ loading: false })
     }
   }
+
+  useEffect(() => {
+    updateMetaTags(playlistName)
+  })
 
   return (
     <div className="top-tracks">

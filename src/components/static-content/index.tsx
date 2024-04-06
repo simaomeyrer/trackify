@@ -1,9 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Header from "../header"
 import AppFooter from "../app-footer"
+import { updateMetaTags } from "../../helpers/updateMetaTags"
 import "./style.css"
 
 function StaticContent(props: { title: string; children: JSX.Element; footer?: JSX.Element }) {
+  useEffect(() => {
+    updateMetaTags(props.title)
+  }, [props.title])
   return (
     <>
       <Header />

@@ -5,8 +5,8 @@ import { sessionStore } from "../../store/session"
 import { auth, redirectToAuthCodeFlow } from "../../services/auth"
 import AccessDenied from "../denied"
 import spotifyLogo from "../../assets/imgs/Spotify_Icon_RGB_Green.png"
-import "./styles.css"
 import { useTranslation } from "react-i18next"
+import "./styles.css"
 
 export default function Home() {
   const { t } = useTranslation()
