@@ -26,10 +26,6 @@ export default function Blog() {
             tem seu "par", no qual a primeira faixa é a original e a segunda é a que contém algum
             riff, melodia e/ou ritmo baseada na original.
           </p>
-          <p>
-            Por fim, essa é a minha playlist de curiosidades no mundo das músicas, com sugestões de
-            alguns amigos mas sempre baseada na própria experiência sonora.
-          </p>
           <iframe
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/6ZTfk1phNvUuJVUZsh6dZj?utm_source=generator&theme=0"
@@ -37,7 +33,11 @@ export default function Blog() {
             height="352"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
-          ></iframe>
+          />
+          <p>
+            Por fim, essa é a minha playlist de curiosidades no mundo das músicas "iguais", com
+            sugestões de alguns amigos mas sempre baseada na própria experiência sonora.
+          </p>
         </>
       </StaticContent>
     </div>

@@ -1,7 +1,6 @@
 .blog {
   display: flex;
   gap: 36px;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -15,6 +14,8 @@
 
 .blog-post-img {
   cursor: pointer;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 .blog-post-title {
