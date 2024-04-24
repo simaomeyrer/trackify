@@ -4,11 +4,6 @@ import tunefindImg from "../../assets/imgs/tunefind.png"
 import tunefindImg2 from "../../assets/imgs/tunefind2.png"
 
 export default function Blog() {
-  const metaTag = document.getElementsByTagName("meta").item(0)
-  metaTag?.setAttribute(
-    "description",
-    "Always the same music - Nem só de Latino vivem as músicas “iguais”?"
-  )
   return (
     <div>
       <StaticContent title="Tunefind">
