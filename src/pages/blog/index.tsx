@@ -2,6 +2,8 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import StaticContent from "../../components/static-content"
 import versusImage from "../../assets/imgs/versus.jpeg"
+import preview from "../../assets/imgs/preview.png"
+import preview2 from "../../assets/imgs/preview2.png"
 import personImage from "../../assets/imgs/person_movie.jpg"
 import "./style.css"
 
@@ -25,6 +27,30 @@ export default function Blog() {
             <p className="blog-post-description">
               Tem música da Beyonce com riff de uma banda totalmente desconhecida, tem intro do
               Charlie Brown Jr. a partir de uma do Malibu!?
+            </p>
+          </div>
+          <div
+            className="blog-post"
+            onClick={() => navigate("/blog/como-ver-as-musicas-e-artistas-mais-ouvidos-no-spotify")}
+          >
+            <img className="blog-post-img" src={preview} alt="spider versus" />
+            <h2 className="blog-post-title">
+              Como Ver as Músicas e Artistas Mais Ouvidos no Spotify
+            </h2>
+            <p className="blog-post-description">
+              Aqui vamos ensinar como você pode facilmente ver seus dados e criar imagens
+              personalizadas com suas músicas favoritas!
+            </p>
+          </div>
+          <div
+            className="blog-post"
+            onClick={() => navigate("/blog/gerador-de-imagem-personalizada-do-spotify")}
+          >
+            <img className="blog-post-img" src={preview2} alt="spider versus" />
+            <h2 className="blog-post-title">Gerador de Imagem Personalizada do Spotify</h2>
+            <p className="blog-post-description">
+              Aqui vamos ensinar como você pode facilmente ver seus dados e criar imagens
+              personalizadas com suas músicas favoritas!
             </p>
           </div>
         </div>

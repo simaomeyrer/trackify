@@ -10,6 +10,8 @@ import About from "../pages/about/about"
 import Blog from "../pages/blog"
 import Post1 from "../pages/blog/post-1"
 import Post2 from "../pages/blog/post-2"
+import Post3 from "../pages/blog/post-3"
+import Post4 from "../pages/blog/post-4"
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +54,14 @@ export const router = createBrowserRouter([
   {
     path: "/blog/tunefind",
     element: <Post2 />,
+  },
+  {
+    path: "/blog/como-ver-as-musicas-e-artistas-mais-ouvidos-no-spotify",
+    element: <Post3 />,
+  },
+  {
+    path: "/blog/gerador-de-imagem-personalizada-do-spotify",
+    element: <Post4 />,
   },
   {
     path: "/error",

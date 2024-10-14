@@ -25,7 +25,6 @@ function About() {
           </a>{" "}
           do Spotify, seguindo todas as normativas e padrões de desenvolvimento requeridos.
         </p>
-        <h2>Meus artistas e/ou músicas mais ouvidas parecem não fazer sentido:</h2>
         <p style={{ marginTop: "unset" }}>
           Apesar dos dados serem provenientes do Spotify a inconsistência de músicas/artistas mais
           ouvidos pode ocorrer pois o período do filtro atual para as buscas é algo aproximado
