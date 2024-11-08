@@ -1,7 +1,7 @@
 import React from "react"
 import StaticContent from "../../components/static-content"
-import tunefindImg from "../../assets/imgs/tunefind.png"
-import tunefindImg2 from "../../assets/imgs/tunefind2.png"
+import tunefindImg from "../../assets/imgs/tunefind.webp"
+import tunefindImg2 from "../../assets/imgs/tunefind2.webp"
 
 export default function Blog() {
   return (

@@ -7,7 +7,7 @@ export default function ImageGenerator(props: React.PropsWithChildren) {
 
     toPng(element, { width: 1080, height: 1980 }).then(function (dataUrl) {
       const link = document.createElement("a")
-      link.download = "image.png"
+      link.download = "image.webp"
       link.href = dataUrl
       link.click()
     })

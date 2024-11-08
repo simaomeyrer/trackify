@@ -1,10 +1,10 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import StaticContent from "../../components/static-content"
-import versusImage from "../../assets/imgs/versus.jpeg"
-import preview from "../../assets/imgs/preview.png"
-import preview2 from "../../assets/imgs/preview2.png"
-import personImage from "../../assets/imgs/person_movie.jpg"
+import versusImage from "../../assets/imgs/versus.webp"
+import preview from "../../assets/imgs/preview.webp"
+import preview2 from "../../assets/imgs/preview2.webp"
+import personImage from "../../assets/imgs/person_movie.webp"
 import "./style.css"
 
 export default function Blog() {

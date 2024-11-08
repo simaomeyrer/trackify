@@ -29,7 +29,7 @@ export default function TopItemsImgGenerator(props: TopItemsGenerator) {
     toPng(ref.current, { cacheBust: true, quality: 1 })
       .then((dataUrl) => {
         const link = document.createElement("a")
-        link.download = "top-10-tracks.png"
+        link.download = "top-10-tracks.webp"
         link.href = dataUrl
         link.click()
       })

@@ -1,7 +1,7 @@
 import React from "react"
-import spotifyLogoBlack from "../../assets/imgs/Spotify_Logo_RGB_Black.png"
-import spotifyLogoGreen from "../../assets/imgs/Spotify_Logo_RGB_Green.png"
-import spotifyLogoWhite from "../../assets/imgs/Spotify_Logo_RGB_White.png"
+import spotifyLogoBlack from "../../assets/imgs/Spotify_Logo_RGB_Black.webp"
+import spotifyLogoGreen from "../../assets/imgs/Spotify_Logo_RGB_Green.webp"
+import spotifyLogoWhite from "../../assets/imgs/Spotify_Logo_RGB_White.webp"
 
 type LogoColor = "black" | "green" | "white"
 interface SpotifyLogoProps {

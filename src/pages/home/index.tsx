@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil"
 import { sessionStore } from "../../store/session"
 import { auth, redirectToAuthCodeFlow } from "../../services/auth"
 import AccessDenied from "../denied"
-import spotifyLogo from "../../assets/imgs/Spotify_Icon_RGB_Green.png"
+import spotifyLogo from "../../assets/imgs/Spotify_Icon_RGB_Green.webp"
 import { useTranslation } from "react-i18next"
 import "./styles.css"
 
