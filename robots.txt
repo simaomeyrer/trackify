@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /profile/
+Disallow: /top-tracks/
+Disallow: /top-artists/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.toptunes.com.br/sitemap.xml
