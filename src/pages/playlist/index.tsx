@@ -41,7 +41,12 @@ export default function CreatedPlaylist() {
       <Header />
       <div className="playlist">
         <div className="playlist-image">
-          <img src={playlist?.images[0].url} className="playlist-image" alt="playlist image" />
+          <img
+            src={playlist?.images[0].url}
+            className="playlist-image"
+            alt="playlist image"
+            loading="lazy"
+          />
         </div>
         <div className="playlist-content">
           <h2 className="playlist-title">{playlist?.name}</h2>

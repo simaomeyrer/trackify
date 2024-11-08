@@ -38,7 +38,7 @@ export default function Home() {
   return error !== "access_denied" ? (
     <div className="home">
       <a className="home-logo" href="https://spotify.com.br" target="_blank">
-        <img src={spotifyLogo} alt="spotify_logo" />
+        <img src={spotifyLogo} alt="spotify_logo" loading="lazy" />
       </a>
       <h1>Top Tunes Discover</h1>
       <div className="home-text">

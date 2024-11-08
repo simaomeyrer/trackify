@@ -15,7 +15,14 @@ export default function SeveralTop(props: SeveralTopProps) {
           )}
         </div>
         {props.image && (
-          <img className="image" src={props.image} height={45} width={45} alt="track-image"></img>
+          <img
+            className="image"
+            src={props.image}
+            height={45}
+            width={45}
+            alt="track-image"
+            loading="lazy"
+          ></img>
         )}
         <div className="description">
           <h4 className="name">{props.name}</h4>

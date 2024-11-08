@@ -20,7 +20,13 @@ export default function SpotifyLogo(props: SpotifyLogoProps) {
       className="logo-container"
       style={{ display: "flex", justifyContent: props.position ?? "start" }}
     >
-      <img className="spotify-logo" src={logos[props.color]} width={80} alt="spotify-logo" />
+      <img
+        className="spotify-logo"
+        src={logos[props.color]}
+        width={80}
+        alt="spotify-logo"
+        loading="lazy"
+      />
     </div>
   )
 }

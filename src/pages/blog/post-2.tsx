@@ -17,12 +17,12 @@ export default function Blog() {
             você pode buscar por filmes, programas de TV, séries, jogos e até trilha sonora de
             propagandas, esse último recurso está em versão beta.
           </p>
-          <img src={tunefindImg} alt="tunefind" />
+          <img src={tunefindImg} alt="tunefind" loading="lazy" />
           <p>
             Ao buscar por uma série por exemplo ainda é possível saber de qual temporada e episódio
             é a música da trilha sonora
           </p>
-          <img src={tunefindImg2} alt="breaking bad" />
+          <img src={tunefindImg2} alt="breaking bad" loading="lazy" />
           <p>
             As listas de músicas no Tunefind são criadas a partir de supervisores musicais
             profissionais responsáveis pela seleção de músicas para programas de TV e filmes - ou
