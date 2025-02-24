@@ -19,7 +19,8 @@
 
 .top-content-title {
   text-align: center;
-  margin: unset;
+  margin: 0 auto 0 auto;
+  border-bottom: 1px solid var(--primary);
 }
 
 .items {

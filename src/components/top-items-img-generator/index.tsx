@@ -26,10 +26,14 @@ export default function TopItemsImgGenerator(props: TopItemsGenerator) {
       return
     }
     setDownloadingImg(true)
-    toPng(ref.current, { cacheBust: true, quality: 1 })
+    toPng(ref.current, {
+      cacheBust: true,
+      quality: 1,
+      backgroundColor: "#242424",
+    })
       .then((dataUrl) => {
         const link = document.createElement("a")
-        link.download = "top-10-tracks.webp"
+        link.download = "top-10-tracks.png"
         link.href = dataUrl
         link.click()
       })
